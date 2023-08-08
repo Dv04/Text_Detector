@@ -1,6 +1,5 @@
 import cv2
 import os
-from ImageVision import detect_red_box
 
 def empty_frames_folder(output_folder):
     # Get a list of all files in the frames folder
