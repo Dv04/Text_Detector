@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model training</title>
+</head>
+<body>
+    <h1>Model Training: (Image labelling...)</h1><hr />
+    <div class="text">
+        <img src="https://images.unsplash.com/photo-1618588507085-c79565432917?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhdXRpZnVsJTIwbmF0dXJlfGVufDB8fDB8fHww&w=1000&q=80" alt="image of frame">
+        <div class="notImage">
+            <p>Predicted Text:<br /><span class="perdicted">hello world sodfjsoidfijj sodifjsdoifj</span></p>
+            <button onclick="">Update</button>
+            <form>
+                <input type="text" /><br />
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
