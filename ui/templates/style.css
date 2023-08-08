@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+}
+img {
+    height: 500px;
+    width: 800px;
+    margin-top: 65px;
+    margin-right: 100px;
+}
+.text {
+    display: flex;
+    justify-content: center;
+}
+p {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+.notImage {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+button {
+    height: 50px;
+    width: 400px;
+    margin: 50px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+input {
+    height: 40px;
+    width: 395px;
+}
+.perdicted {
+    /* border: 1px solid black; */
+    font-weight: normal;
+    font-size: 20px;
+}
