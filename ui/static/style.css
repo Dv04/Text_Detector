@@ -21,17 +21,30 @@ p {
     margin-top: 70px;
     margin-bottom: 50px;
 }
+.updated-buttons {
+    display: flex;
+}
 .notImage {
     display: flex;
     flex-direction: column;
     align-content: space-around;
 }
-button {
+#submit {
     height: 50px;
     width: 400px;
     margin: 50px 0;
     font-weight: bold;
     font-size: 20px;
+}
+#update, #not-update {
+    height: 50px;
+    width: 180px;
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+#update {
+    margin-right: 40px;
 }
 input {
     height: 40px;

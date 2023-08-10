@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="./../static/style.css"> -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Model training</title>
@@ -11,14 +13,51 @@
     <div class="text">
         <img src="https://images.unsplash.com/photo-1618588507085-c79565432917?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhdXRpZnVsJTIwbmF0dXJlfGVufDB8fDB8fHww&w=1000&q=80" alt="image of frame">
         <div class="notImage">
-            <p>Predicted Text:<br /><span class="perdicted">hello world sodfjsoidfijj sodifjsdoifj</span></p>
-            <button onclick="">Update</button>
-            <form>
-                <input type="text" /><br />
-                <button>Submit</button>
-            </form>
+            <p>Predicted Text:<br /><span class="perdicted">{{predictedText}}</span></p>
+            <div class="updated-buttons">
+                <button id="update">Update</button>
+                <button id="not-update">Not Update</button>
+            </div>
+            <input id="update-txt" type="text" disabled /><br />
+            <button id="submit" onclick="sendData()">Submit</button>
+            <div id="output"></div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        var predicted = false;
+
+        document.getElementById('update').onclick = function() {
+            console.log('updated');
+            predicted = true;
+            document.getElementById('update-txt').disabled = false;
+        };
+
+        document.getElementById('not-update').onclick = function() {
+            console.log('not updated');
+            predicted = false;
+            document.getElementById('update-txt').disabled = true;
+            document.getElementById('update-txt').value = '';
+        };
+
+        function sendData() {
+            var input = document.getElementById('update-txt').value;
+            console.log("into the function: text:", input, " and bool ", predicted);
+            if (input == null) {
+                input = '';
+            }
+            $.ajax({
+                url: '/frame',
+                type: 'POST',
+                data: { 'text': input, 'updated': predicted },
+                success: function(response) {
+                    // document.getElementById('output').innerHTML = 'value is submitted';
+                    alert('Value is submitted')
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+    </script>
 </body>
 </html>
