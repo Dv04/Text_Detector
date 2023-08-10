@@ -16,7 +16,8 @@
     <h1>Model Training: (Image labelling...)</h1>
     <hr />
     <div class="text">
-      <img src="{{ Image }}" />
+      <img id="your-img-id" src="{{ Image }}?{{ current_time }}" />
+
       <div class="notImage">
         <p>
           Predicted Text:<br /><span class="perdicted">{{predictedText}}</span>
@@ -26,7 +27,7 @@
           <button id="not-update">Not Update</button>
         </div>
         <input id="update-txt" type="text" disabled /><br />
-        <button id="submit" onclick="sendData()">Submit</button>
+        <button id="submit" type="submit">Submit</button>
         <div id="output"></div>
       </div>
     </div>
@@ -47,24 +48,37 @@
       };
 
       function sendData() {
+        windows.location.reload(true);
+        console.log("sendData() called");
         var input = document.getElementById("update-txt").value;
         console.log("into the function: text:", input, " and bool ", predicted);
         if (input == null) {
           input = "";
         }
+
+        // Add a unique query parameter to the image URL
+        var imageUrl = "{{ Image }}" + "?nocache=" + new Date().getTime();
+
         $.ajax({
           url: "/frame",
           type: "POST",
           data: { text: input, updated: predicted },
           success: function (response) {
-            // document.getElementById('output').innerHTML = 'value is submitted';
-            alert("Value is submitted");
+            console.log("Response from server:", response);
+            // Update the image source using the new URL
+            var imgElement = document.getElementById("your-img-id");
+            imgElement.src = {{imageUrl}};
           },
           error: function (error) {
             console.log(error);
           },
         });
       }
+
+      // Submit the form on button click
+      document.getElementById("submit").onclick = function () {
+        sendData();
+      };
     </script>
   </body>
 </html>
