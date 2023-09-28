@@ -2,7 +2,7 @@ from pymongo import MongoClient
 import base64
 from bson import ObjectId
 
-client = MongoClient('mongodb+srv://heetvekariya50:lF87e8KZEsVAC10Y@cluster0.yd7owd2.mongodb.net/')
+client = MongoClient('')
 
 db = client['test']
 collection = db['temp']
