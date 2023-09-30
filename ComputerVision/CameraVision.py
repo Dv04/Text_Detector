@@ -13,7 +13,6 @@ def empty_frames_folder(output_folder):
 def extract_frames_with_timestamp(video_path, output_folder):
     # Empty the frames folder before starting extraction
 
-
     video_capture = cv2.VideoCapture(video_path)
     frame_count = 1
 
@@ -24,8 +23,14 @@ def extract_frames_with_timestamp(video_path, output_folder):
 
         frame_count += 1
         if frame_count % 21 == 1:
+            # Create a folder with the same name as the video
+            video_name = os.path.splitext(os.path.basename(video_path))[0]
+            video_folder = os.path.join(output_folder, video_name)
+            if not os.path.exists(video_folder):
+                os.mkdir(video_folder)
+
             frame_filename = f"{int((frame_count-1)/21):03d}.jpg"
-            frame_filepath = os.path.join(output_folder, frame_filename)
+            frame_filepath = os.path.join(video_folder, frame_filename)
 
             # Get the timestamp of the current frame (in milliseconds)
             timestamp_ms = video_capture.get(cv2.CAP_PROP_POS_MSEC)
@@ -45,5 +50,8 @@ if __name__ == "__main__":
 
     empty_frames_folder(output_folder)
     # for i in range(1,10):
-    video_file_path = f"/Users/apple/Downloads/ocr/1.mp4" 
-    extract_frames_with_timestamp(video_file_path, output_folder)
+    video_folder = "/Users/apple/Downloads/ocr" 
+    video_files = os.listdir(video_folder)
+    for video_file in video_files:
+        video_file_path = os.path.join(video_folder, video_file)
+        extract_frames_with_timestamp(video_file_path, output_folder)
