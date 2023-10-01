@@ -1,4 +1,3 @@
-import cv2
 import json
 
 def show_image_and_get_correction(image_path, recognized_text):
