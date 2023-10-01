@@ -1,0 +1,7 @@
+easyocr==1.7.1
+Flask==3.0.0
+opencv_python==4.8.1.78
+opencv_python_headless==4.8.1.78
+pymongo==4.5.0
+pytesseract==0.3.10
+scikit_learn==1.3.1
