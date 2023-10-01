@@ -1,6 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      .h1 {
+	text-align: center;
+	font-size : 50px;
+	letter-spacing : 0.5px;
+	font-family: 'Poppins', sans-serif;
+    }
+      body {
+	margin: 0;
+	padding: 0;
+    }
+    img{
+        height: 500px;
+        width: 800px;
+        margin-top: 65px;
+        margin-right: 100px;
+    }
+    .text {
+        display: flex;
+        justify-content: center;
+    }
+    p {
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 70px;
+        margin-bottom: 50px;
+    }
+    .updated-buttons {
+        display: flex;
+    }
+    .notImage {
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+    }
+    #submit {
+        height: 50px;
+        width: 400px;
+        margin: 50px 0;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    #update,
+    #not-update {
+        height: 50px;
+        width: 180px;
+        margin: 20px 0;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    #update {
+        margin-right: 40px;
+    }
+    input {
+        height: 40px;
+        width: 395px;
+    }
+    .perdicted {
+        font-weight: normal;
+        font-size: 20px;
+    }
+      button {
+            background-color: gray;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: darkgray;
+        }
+      #update-txt {
+    background-color: #f2f2f2;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    }
+    </style>
     <!-- <link rel="stylesheet" href="./../static/style.css"> -->
     <link
       type="text/css"
@@ -13,14 +96,14 @@
     <title>Model training</title>
   </head>
   <body>
-    <h1>Model Training: (Image labelling...)</h1>
+    <h1  class="h1"> Model Training : (Image labelling...)</h1>
     <hr />
     <div class="text">
       <img id="your-img-id" src="{{ Image }}?{{ current_time }}" />
 
       <div class="notImage">
-        <p>
-          Predicted Text:<br /><span class="perdicted">{{predictedText}}</span>
+        <p style="font-family: 'Poppins', sans-serif;">
+          Predicted Text :<br /><span class="perdicted">{{predictedText}}</span>
         </p>
         <div class="updated-buttons">
           <button id="update">Update</button>
