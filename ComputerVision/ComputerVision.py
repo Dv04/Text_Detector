@@ -1,5 +1,4 @@
 import cv2
-import easyocr
 from ImageVision import detect_red_box
 
 def extract_text_from_video(video_path, output_file):
