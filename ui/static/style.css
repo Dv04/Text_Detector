@@ -1,57 +1,58 @@
 body {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
-h1{
-    text-align: center;
+h1 {
+	text-align: center;
 }
 img {
-    height: 500px;
-    width: 800px;
-    margin-top: 65px;
-    margin-right: 100px;
+	height: 500px;
+	width: 800px;
+	margin-top: 65px;
+	margin-right: 100px;
 }
 .text {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 p {
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: 70px;
-    margin-bottom: 50px;
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 70px;
+	margin-bottom: 50px;
 }
 .updated-buttons {
-    display: flex;
+	display: flex;
 }
 .notImage {
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
 }
 #submit {
-    height: 50px;
-    width: 400px;
-    margin: 50px 0;
-    font-weight: bold;
-    font-size: 20px;
+	height: 50px;
+	width: 400px;
+	margin: 50px 0;
+	font-weight: bold;
+	font-size: 20px;
 }
-#update, #not-update {
-    height: 50px;
-    width: 180px;
-    margin: 20px 0;
-    font-weight: bold;
-    font-size: 20px;
+#update,
+#not-update {
+	height: 50px;
+	width: 180px;
+	margin: 20px 0;
+	font-weight: bold;
+	font-size: 20px;
 }
 #update {
-    margin-right: 40px;
+	margin-right: 40px;
 }
 input {
-    height: 40px;
-    width: 395px;
+	height: 40px;
+	width: 395px;
 }
 .perdicted {
-    /* border: 1px solid black; */
-    font-weight: normal;
-    font-size: 20px;
+	/* border: 1px solid black; */
+	font-weight: normal;
+	font-size: 20px;
 }
