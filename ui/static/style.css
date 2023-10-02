@@ -11,10 +11,15 @@ img {
 	margin-top: 65px;
 	margin-right: 100px;
 }
+
+/* Styling the text */
 .text {
 	display: flex;
 	justify-content: center;
 }
+
+/* Paragraph Styling */
+
 p {
 	font-size: 30px;
 	font-weight: bold;
