@@ -18,17 +18,17 @@ Text extraction from a 16-segment display using computer vision techniques.
 ## Setup
 
 1. Make sure Python 3.x is installed.
-2. Install the required libraries:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Clone the repository:
+2. Clone the repository:
 
 ```bash
 git clone [repository-link]
 cd Text_Detector
+```
+
+3. Install the required libraries:
+
+```bash
+pip install -r requirements.txt
 ```
 
 ## Usage
@@ -64,7 +64,6 @@ Then access the UI at `http://127.0.0.1:5000/`.
 1. **CameraVision.py**: Extracts frames from videos, specifically every 21st frame.
 2. **ComputerVision.py**: Processes videos to extract text, leaning on `ImageVision.py` for detecting text inside red boxes.
 3. **ImageVision.py**: Discovers red boxes in images, extracting text from these zones using EasyOCR.
-
 4. **app.py**: The Flask UI, showcasing extracted frames and detected text.
 
 ## Web UI
