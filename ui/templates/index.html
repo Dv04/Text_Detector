@@ -1,167 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style>
-      .h1 {
-	text-align: center;
-	font-size : 50px;
-	letter-spacing : 0.5px;
-	font-family: 'Poppins', sans-serif;
-    }
-      body {
-	margin: 0;
-	padding: 0;
-    }
-    img{
-        height: 500px;
-        width: 800px;
-        margin-top: 65px;
-        margin-right: 100px;
-    }
-    .text {
-        display: flex;
-        justify-content: center;
-    }
-    p {
-        font-size: 30px;
-        font-weight: bold;
-        margin-top: 70px;
-        margin-bottom: 50px;
-    }
-    .updated-buttons {
-        display: flex;
-    }
-    .notImage {
-        display: flex;
-        flex-direction: column;
-        align-content: space-around;
-    }
-    #submit {
-        height: 50px;
-        width: 400px;
-        margin: 50px 0;
-        font-weight: bold;
-        font-size: 20px;
-    }
-    #update,
-    #not-update {
-        height: 50px;
-        width: 180px;
-        margin: 20px 0;
-        font-weight: bold;
-        font-size: 20px;
-    }
-    #update {
-        margin-right: 40px;
-    }
-    input {
-        height: 40px;
-        width: 395px;
-    }
-    .perdicted {
-        font-weight: normal;
-        font-size: 20px;
-    }
-      button {
-            background-color: gray;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin: 5px;
-            font-size: 16px;
-        }
+    <head>
+        <style>
+            .h1 {
+                text-align: center;
+                font-size: 50px;
+                letter-spacing: 0.5px;
+                font-family: "Poppins", sans-serif;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            img {
+                height: 500px;
+                width: 800px;
+                margin-top: 65px;
+                margin-right: 100px;
+            }
+            .text {
+                display: flex;
+                justify-content: center;
+            }
+            p {
+                font-size: 30px;
+                font-weight: bold;
+                margin-top: 70px;
+                margin-bottom: 50px;
+            }
+            .updated-buttons {
+                display: flex;
+            }
+            .notImage {
+                display: flex;
+                flex-direction: column;
+                align-content: space-around;
+            }
+            #submit {
+                height: 50px;
+                width: 400px;
+                margin: 50px 0;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            #update,
+            #not-update {
+                height: 50px;
+                width: 180px;
+                margin: 20px 0;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            #update {
+                margin-right: 40px;
+            }
+            input {
+                height: 40px;
+                width: 395px;
+            }
+            .perdicted {
+                font-weight: normal;
+                font-size: 20px;
+            }
+            button {
+                background-color: gray;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                border-radius: 5px;
+                margin: 5px;
+                font-size: 16px;
+            }
 
-        button:hover {
-            background-color: darkgray;
-        }
-      #update-txt {
-    background-color: #f2f2f2;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px;
-    }
-    </style>
-    <!-- <link rel="stylesheet" href="./../static/style.css"> -->
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Model training</title>
-  </head>
-  <body>
-    <h1  class="h1"> Model Training : (Image labelling...)</h1>
-    <hr />
-    <div class="text">
-      <img id="your-img-id" src="{{ Image }}?{{ current_time }}" />
+            button:hover {
+                background-color: darkgray;
+            }
+            #update-txt {
+                background-color: #f2f2f2;
+                color: #333;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 5px;
+            }
+        </style>
+        <!-- <link rel="stylesheet" href="./../static/style.css"> -->
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="{{ url_for('static', filename='style.css') }}"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Model training</title>
+    </head>
+    <body>
+        <h1 class="h1">Model Training : (Image labelling...)</h1>
+        <hr />
+        <div class="text">
+            <img id="your-img-id" src="{{ Image }}?{{ current_time }}" />
 
-      <div class="notImage">
-        <p style="font-family: 'Poppins', sans-serif;">
-          Predicted Text :<br /><span class="perdicted">{{predictedText}}</span>
-        </p>
-        <div class="updated-buttons">
-          <button id="update">Update</button>
-          <button id="not-update">Not Update</button>
+            <div class="notImage">
+                <p style="font-family: 'Poppins', sans-serif">
+                    Predicted Text :<br /><span class="perdicted"
+                        >{{predictedText}}</span
+                    >
+                </p>
+                <div class="updated-buttons">
+                    <button id="update">Update</button>
+                    <button id="not-update">Not Update</button>
+                </div>
+                <input id="update-txt" type="text" disabled /><br />
+                <button id="submit" type="submit">Submit</button>
+                <div id="output"></div>
+            </div>
         </div>
-        <input id="update-txt" type="text" disabled /><br />
-        <button id="submit" type="submit">Submit</button>
-        <div id="output"></div>
-      </div>
-    </div>
-    <script>
-      var predicted = false;
+        <script>
+            var predicted = false;
 
-      document.getElementById("update").onclick = function () {
-        console.log("updated");
-        predicted = true;
-        document.getElementById("update-txt").disabled = false;
-      };
+            document.getElementById("update").onclick = function () {
+              console.log("updated");
+              predicted = true;
+              document.getElementById("update-txt").disabled = false;
+            };
 
-      document.getElementById("not-update").onclick = function () {
-        console.log("not updated");
-        predicted = false;
-        document.getElementById("update-txt").disabled = true;
-        document.getElementById("update-txt").value = "";
-      };
+            document.getElementById("not-update").onclick = function () {
+              console.log("not updated");
+              predicted = false;
+              document.getElementById("update-txt").disabled = true;
+              document.getElementById("update-txt").value = "";
+            };
 
-      function sendData() {
-        windows.location.reload(true);
-        console.log("sendData() called");
-        var input = document.getElementById("update-txt").value;
-        console.log("into the function: text:", input, " and bool ", predicted);
-        if (input == null) {
-          input = "";
-        }
+            function sendData() {
+              windows.location.reload(true);
+              console.log("sendData() called");
+              var input = document.getElementById("update-txt").value;
+              console.log("into the function: text:", input, " and bool ", predicted);
+              if (input == null) {
+                input = "";
+              }
 
-        // Add a unique query parameter to the image URL
-        var imageUrl = "{{ Image }}" + "?nocache=" + new Date().getTime();
+              // Add a unique query parameter to the image URL
+              var imageUrl = "{{ Image }}" + "?nocache=" + new Date().getTime();
 
-        $.ajax({
-          url: "/frame",
-          type: "POST",
-          data: { text: input, updated: predicted },
-          success: function (response) {
-            console.log("Response from server:", response);
-            // Update the image source using the new URL
-            var imgElement = document.getElementById("your-img-id");
-            imgElement.src = {{imageUrl}};
-          },
-          error: function (error) {
-            console.log(error);
-          },
-        });
-      }
+              $.ajax({
+                url: "/frame",
+                type: "POST",
+                data: { text: input, updated: predicted },
+                success: function (response) {
+                  console.log("Response from server:", response);
+                  // Update the image source using the new URL
+                  var imgElement = document.getElementById("your-img-id");
+                  imgElement.src = {{imageUrl}};
+                },
+                error: function (error) {
+                  console.log(error);
+                },
+              });
+            }
 
-      // Submit the form on button click
-      document.getElementById("submit").onclick = function () {
-        sendData();
-      };
-    </script>
-  </body>
+            // Submit the form on button click
+            document.getElementById("submit").onclick = function () {
+              sendData();
+            };
+        </script>
+    </body>
 </html>

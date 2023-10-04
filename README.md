@@ -1,87 +1,83 @@
-# Project Title
+# Text_Detector
 
-One Paragraph of project description goes here
+Text extraction from a 16-segment display using computer vision techniques.
 
-## Getting Started
+## Table of Contents
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+1. [Introduction](#introduction)
+2. [Setup](#setup)
+3. [Usage](#usage)
+4. [Scripts Overview](#scripts-overview)
+5. [Web UI](#web-ui)
+6. [Contributing](#contributing)
 
-### Prerequisites
+## Introduction
 
-What things you need to install the software and how to install them
+`Text_Detector` is designed to detect and extract text from videos and images, especially from a 16-segment display. The project utilizes OpenCV for image and video processing and EasyOCR for text recognition. A Flask-based UI is also provided for visualization.
 
-```
-Give examples
-```
+## Setup
 
-### Installing
+1. Make sure Python 3.x is installed.
+2. Install the required libraries:
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+```bash
+pip install -r requirements.txt
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+3. Clone the repository:
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+```bash
+git clone [repository-link]
+cd Text_Detector
 ```
 
-### And coding style tests
+## Usage
 
-Explain what these tests test and why
+1. Extract frames from video:
 
+```bash
+python ComputerVision/CameraVision.py
 ```
-Give an example
+
+2. Detect text from video:
+
+```bash
+python ComputerVision/ComputerVision.py
 ```
 
-## Deployment
+3. Detect and test text extraction from image:
 
-Add additional notes about how to deploy this on a live system
+```bash
+python ComputerVision/ImageVision.py
+```
 
-## Built With
+4. Launch the Flask UI:
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+```bash
+python ui/app.py
+```
+
+Then access the UI at `http://127.0.0.1:5000/`.
+
+## Scripts Overview
+
+1. **CameraVision.py**: Extracts frames from videos, specifically every 21st frame.
+2. **ComputerVision.py**: Processes videos to extract text, leaning on `ImageVision.py` for detecting text inside red boxes.
+3. **ImageVision.py**: Discovers red boxes in images, extracting text from these zones using EasyOCR.
+
+4. **app.py**: The Flask UI, showcasing extracted frames and detected text.
+
+## Web UI
+
+The web UI is built using Flask, allowing users to visualize text detection results:
+
+-   **index.html**: Main UI for viewing images and extracted text.
+-   **style.css**: Contains styling for the UI.
+
+For a detailed walkthrough of the UI components, view the code in the `ui` directory.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Before contributing, please review the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md). Adherence to these rules ensures smooth collaboration and code integration.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+---
