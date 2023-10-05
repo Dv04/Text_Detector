@@ -21,7 +21,7 @@ Text extraction from a 16-segment display using computer vision techniques.
 2. Clone the repository:
 
 ```bash
-git clone [repository-link]
+git clone https://github.com/Dv04/Text_Detector
 cd Text_Detector
 ```
 
