@@ -1,60 +1,95 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #eee9da;
+    font-family: 'Poppins', sans-serif;
+    color: #326683;
 }
-h1 {
+
+.h1 {
     text-align: center;
+    font-size: 50px;
+    letter-spacing: 0.5px;
+    color: #326683;
+    margin: 20px 0;
 }
-img {
-    height: 500px;
-    width: 800px;
-    margin-top: 65px;
-    margin-right: 100px;
+
+hr {
+    border: 1px solid #bdcdd6;
 }
 
 .text {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+}
+
+img {
+    height: 500px;
+    width: 800px;
+    margin-right: 50px;
+}
+
+.notImage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 400px;
 }
 
 p {
     font-size: 30px;
     font-weight: bold;
-    margin-top: 70px;
-    margin-bottom: 50px;
+    color: #326683;
+    margin-bottom: 20px;
 }
-.updated-buttons {
-    display: flex;
-}
-.notImage {
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-}
-#submit {
-    height: 50px;
-    width: 400px;
-    margin: 50px 0;
-    font-weight: bold;
-    font-size: 20px;
-}
-#update,
-#not-update {
-    height: 50px;
-    width: 180px;
-    margin: 20px 0;
-    font-weight: bold;
-    font-size: 20px;
-}
-#update {
-    margin-right: 40px;
-}
-input {
-    height: 40px;
-    width: 395px;
-}
+
 .perdicted {
-    /* border: 1px solid black; */
     font-weight: normal;
     font-size: 20px;
+}
+
+.updated-buttons {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #326683;
+    color: #eee9da;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #bdcdd6;
+}
+
+#update-txt {
+    background-color: #dedcde;
+    color: #326683;
+    border: 1px solid #bababa;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#submit {
+    background-color: #326683;
+    color: #eee9da;
+}
+
+#submit:hover {
+    background-color: #93bfcf;
+}
+
+#output {
+    color: #326683;
+    font-size: 18px;
 }
