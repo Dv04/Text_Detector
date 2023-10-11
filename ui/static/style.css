@@ -1,21 +1,27 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #eee9da;
+    background-color: #f0f0f0; /* Subtle gray background */
     font-family: 'Poppins', sans-serif;
-    color: #326683;
+    color: #333;
 }
 
 .h1 {
     text-align: center;
-    font-size: 50px;
-    letter-spacing: 0.5px;
-    color: #326683;
+    font-size: 48px;
+    letter-spacing: 2px;
+    color: #ff4500;
     margin: 20px 0;
+    transition: color 0.3s;
+}
+
+.h1:hover {
+    color: #4169e1; /* Change text color to blue on hover */
 }
 
 hr {
-    border: 1px solid #bdcdd6;
+    border: 2px solid #ff69b4;
+    transition: border-color 0.3s;
 }
 
 .text {
@@ -26,70 +32,92 @@ hr {
 }
 
 img {
-    height: 500px;
-    width: 800px;
-    margin-right: 50px;
+    max-height: 500px;
+    max-width: 100%;
+    margin-right: 20px;
+    border: 10px solid #ff69b4;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.1);
 }
 
 .notImage {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 400px;
+    width: 100%;
 }
 
 p {
     font-size: 30px;
     font-weight: bold;
-    color: #326683;
-    margin-bottom: 20px;
+    color: #4169e1; /* Blue text color */
+    margin-bottom: 10px;
 }
 
 .perdicted {
-    font-weight: normal;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #ff1493;
 }
 
 .updated-buttons {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 button {
-    background-color: #326683;
-    color: #eee9da;
+    background-color: #4169e1;
+    color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 5px;
-    font-size: 16px;
+    font-size: 20px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #bdcdd6;
+    background-color: #ff8c00;
 }
 
 #update-txt {
-    background-color: #dedcde;
-    color: #326683;
-    border: 1px solid #bababa;
-    border-radius: 5px;
-    padding: 10px;
+    background-color: #ffec40;
+    color: #333;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    padding: 12px;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+#update-txt:hover {
+    transform: scale(1.05);
+    border-color: #ff1493;
 }
 
 #submit {
-    background-color: #326683;
-    color: #eee9da;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: background-color 0.3s;
 }
 
 #submit:hover {
-    background-color: #93bfcf;
+    background-color: #ff8c00;
 }
 
 #output {
-    color: #326683;
-    font-size: 18px;
+    color: #4169e1; /* Blue text color */
+    font-size: 24px;
 }
