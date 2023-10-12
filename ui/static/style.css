@@ -29,6 +29,8 @@ img {
     height: 500px;
     width: 800px;
     margin-right: 50px;
+    box-shadow: 5px 5px 10px #bdcdd6; /* Add a shadow to the image */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .notImage {
@@ -68,6 +70,8 @@ button {
 
 button:hover {
     background-color: #bdcdd6;
+    color: #000000; /* Change text color on hover */
+    transition: color 0.3s;
 }
 
 #update-txt {
